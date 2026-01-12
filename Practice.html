@@ -1,0 +1,432 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial scale= 1.0">
+    <title> Practice </title>
+    <link rel="stylesheet" type="text/css" href="responsive.css">
+   
+</head>
+
+<body>
+    <div class="container">
+        <div class="row1">
+            <div class="col4">
+                <div class="box">
+                    <form onsubmit="return validateform()">
+                
+                        <select id="services" onchange="removeSelectError()">
+                            <option value=""> Service Type: Suburb to Suburb </option>
+                            <option value="Suburb to Airport"> Suburb to Airport </option>
+                            <option value="Pickup from the Airport"> Pickup from the Airport </option>
+                            <option value="Maxi cab service"> Maxi cab service </option>
+                            <option value="Event Transfer"> Event Transfer </option>
+                            <option value="Hotel Transfer"> Hotel Transfer </option>
+                            <option value=" Group Transfer"> Group Transfer </option>
+                            <option value=" Parcel Transfer"> Parcel Transfer </option>
+                        </select>
+                        <span id="service" class="msg"></span>
+                    
+                </div>
+            </div>
+            <div class="col3">
+                <div class="box">
+                    
+                        <input id="pickupAdd" class="input primary" type="text" placeholder="Pickup Address (Street No., Street Name)" oninput="removeError()"/>
+                        <span id="pickupMsg" class="msg"></span>
+                    
+                </div>
+                <div class="box">
+                    
+                        <input id="dropoffAdd" type="text" placeholder="Drop off Address" oninput="removeError()"/>
+                        <span id="dropoffMsg" class="msg"></span>
+                    
+                </div>
+            </div>
+
+            <div class="col1">
+                <div class="box">
+                    
+                        <input id="name" type="text" placeholder="Name" oninput="removeError()"/>
+                        <span id="names" class="msg"></span>
+                    
+                </div>
+                <div class="box">
+                    
+                        <input id="PhoneNo" type="text" placeholder="Phone Number" oninput="removeError()"/>
+                        <span id="Phone" class="msg"></span>
+                    
+                </div>
+                <div class="box">
+                    
+                        <input id="email" type="text" placeholder="Email address" oninput="removeError()"/>
+                        <span id="emailID" class="msg"></span>
+                    
+                </div>
+            </div>
+
+            <div class="col2">
+                <div class="box">
+                    
+                        <input id="passengers" type="text" placeholder="No of Passengers"  oninput="removeError()"/>
+                        <span id="passen" class="msg"></span>
+                    
+                </div>
+                <div class="box">
+                    
+                        <select id="vehicle" class="select primary" onchange="removeSelectError()">
+                            <option value=""> Vehicle Type </option>
+                            <option value="Vehicle 1"> Vehicle 1 </option>
+                            <option value="Vehicle 2"> Vehicle 2 </option>
+                        </select>
+                        <span id="vehicles" class="msg"></span>
+                    
+                </div>
+                <div class="box">
+
+                        <select id="dropbox" onclick="removeSelectError()">
+                            <option value="">Pickup date/Time</option>
+                            <option value="Now">Now</option>
+                            <option value="Later">Later</option>
+                        </select>
+                        <span id="pickup" class="msg"></span>
+
+
+                </div>
+            </div>
+
+            <div class="col5">
+                <div class="box">
+                    <input id="selectbox" type="date">
+                </div>
+
+                <div class="box">
+                    <select id="getbox">
+                        <option value=""> Select </option>
+                        <option value="06:30 AM"> 06:30 AM</option>
+                        <option value="07:30 AM"> 07:30 AM</option>
+                        <option value="08:30 AM"> 08:30 AM</option>
+                        <option value="09:30 AM"> 09:30 AM</option>
+                        <option value="10:30 AM"> 10:30 AM</option>
+                        <option value="11:30 AM"> 11:30 AM</option>
+                        <option value="12:30 AM"> 12:30 AM</option>
+                    </select>
+
+                </div>
+                
+            </div>
+
+            <div class="col4">
+                <div class="box1">
+                    
+                        Retrun Trip
+                        <input id="Yes" type="radio" name="Return Trip"> 
+                        <label for "Yes"> Yes </label>
+                        
+                        <input id="No" type="radio" name="Return Trip">
+                        <label for "No"> No </label>
+
+                        <span id="returnMsg" class="msg"></span>
+
+                    
+                        <div class="extra">
+                            <input type="text" placeholder="Return pickup Address (Street No., Street Name)">
+                            <input type="text" placeholder="Return Drop Off Address (Street No., Street Name)">
+                            <input type="text" placeholder="No. of return passengers">
+                            <select id="vehicles">
+                                <option value=""> Return Vehicle type </option>
+                                <option value="Vehicle type 1"> Vehicle type 1 </option>
+                                <option value="Vehicle type 2"> Vehicle type 2 </option>
+                                <option value="Vehicle type 3"> Vehicle type 3 </option>
+                                <option value="Vehicle type 4"> Vehicle type 4 </option>
+                            </select>
+                               Select Date/Time of Arrival
+                               <p>                      </p>
+                            <input type="date">
+                            <select>
+                                <option> 12:00 AM </option>
+                                <option> 1:00 AM </option>
+                                <option> 2:00 AM </option>
+                                <option> 3:00 AM </option>
+                                <option> 4:00 AM </option>
+                                <option> 5:00 AM</option>
+                             </select>
+                        </div>
+                    </div>
+                </div>
+
+            <div class="col4">
+                <div class="box">
+                    
+                        <textarea> Special Instructions (If any)</textarea>
+                    
+
+                </div>
+            </div>
+            <div class="col4">
+                <div class="box">
+                    
+                        <select id="payment" onchange="removeSelectError()">
+                            <option value=""> Payment Method </option>
+                            <option value=" Payment Method 1"> Payment Method 1 </option>
+                            <option value=" Payment Method 2"> Payment Method 2 </option>
+                            <option value=" Payment Method 3"> Payment Method 3 </option>
+                        </select>
+                        <span id="pay" class="msg"></span>
+                   
+                </div>
+            </div>
+
+
+            <div class="col4">
+                <div class="box">
+                    <input type="submit" value="Submit">
+                </div>
+            </div>
+
+        </form>
+
+        </div>
+
+    </div>
+     <script> 
+          var dropbox = document.getElementById("dropbox");
+          var selectbox = document.getElementById("selectbox");
+          var getbox = document.getElementById("getbox");
+          
+          /* hide first */
+          selectbox.style.display = "none";
+          getbox.style.display= "none";
+          
+          dropbox.onchange = function () {
+            if (dropbox.value == "Later") {
+                selectbox.style.display = "grid";
+                getbox.style.display= "grid";
+            } else {
+                selectbox.style.display = "none";
+                getbox.style.display = "none";
+            }
+        };
+
+        function removeError() {
+            document.getElementById("dropoffAdd").classList.remove("error");
+            document.getElementById("dropoffMsg").innerText = "";
+            document.getElementById("pickupAdd").classList.remove("error");
+            document.getElementById("pickupMsg").innerText = "";
+            document.getElementById("name").classList.remove("error");
+            document.getElementById("names").innerText = "";
+            document.getElementById("PhoneNo").classList.remove("error");
+            document.getElementById("Phone").innerText = "";
+            document.getElementById("email").classList.remove("error");
+            document.getElementById("emailID").innerText = "";
+            document.getElementById("passengers").classList.remove("error");
+            document.getElementById("passen").innerText = "";
+            
+        }
+
+        function removeSelectError() {
+             document.getElementById("services").classList.remove("error");
+             document.getElementById("service").innerText = "";
+             document.getElementById("vehicle").classList.remove("error");
+             document.getElementById("vehicles").innerText = "";
+             document.getElementById("payment").classList.remove("error");
+             document.getElementById("pay").innerText = "";
+             document.getElementById("dropbox").classList.remove("error");
+             document.getElementById("pickup").innerText = "";
+
+}
+
+
+
+        function validateform()
+        {
+
+            let name = document.getElementById("name");
+            let PhoneNo = document.getElementById("PhoneNo");
+            let passengers = document.getElementById("passengers"); 
+            let dropbox = document.getElementById("dropbox");
+            let pickup = document.getElementById("pickup");
+            let email = document.getElementById("email");
+            let pickupAdd = document.getElementById("pickupAdd");
+            let dropoffAdd = document.getElementById("dropoffAdd");
+            let services = document.getElementById("services");
+            let vehicle = document.getElementById("vehicle");
+            let payment = document.getElementById("payment");
+            let radios = document.getElementsByName("Return Trip");
+            let selected = false;
+            let passen = document.getElementById("passen");
+            let vehicles = document.getElementById("vehicles");
+            let service = document.getElementById("service");
+            let pickupMsg = document.getElementById("pickupMsg");
+            let dropoffpMsg = document.getElementById("dropoffMsg");
+            let names = document.getElementById("names");
+            let phone = document.getElementById("phone");
+            let emailID = document.getElementById("emailID");
+            
+
+
+            if(services.value.trim() === "")
+            {
+                alert("Please select the valid services");
+                services.classList.add("error");
+                service.innerText = "Select the services from here";
+                services.focus();
+                return false;
+            }
+
+            if(pickupAdd.value.trim()=== "")
+            {
+                alert("Enter a valid pickup Address");
+                pickupAdd.classList.add("error");
+                pickupMsg.innerText = "Fill the pickup address here";
+                pickupAdd.focus();
+                return false;
+            }
+
+            if(dropoffAdd.value.trim() === "")
+            {
+                alert("Enter a valid dropoff Address");
+                dropoffAdd.classList.add("error");
+                dropoffAdd.classList.remove("success");
+                dropoffMsg.innerText = "Fill the dropoff address here";
+                dropoffAdd.focus();
+                return false;
+            }
+            
+
+            if (name.value.trim() === "") 
+            {
+
+                    alert("Name is required");
+                    name.classList.add("error");
+                    name.classList.remove("success");
+                    names.innerText = "Write the name here";
+                    name.focus();
+                    return false;
+                    
+            }
+
+            if(!isNaN(name.value.trim()))
+            {
+                alert("Please enter the alphabets only under the name field")
+                name.classList.add("error");
+                name.classList.remove("success");
+                names.innerText = "Make the corrections here";
+                name.focus();
+                return false;
+            }
+
+            if(PhoneNo.value.trim() === "")
+            {
+                alert("Please enter a valid phone number");
+                PhoneNo.classList.add("error");
+                Phone.innerText = "Write the phone number here";
+                PhoneNo.focus();
+                return false;
+            }
+
+            if(isNaN(PhoneNo.value.trim()))
+            {
+                alert("Please enter a valid phone number");
+                PhoneNo.classList.add("error");
+                Phone.innerText = "Phone number should contain the digits only";
+                PhoneNo.focus();
+                return false;
+            }
+
+            if(PhoneNo.value.trim().length !=10)
+            {
+                alert("Please enter a valid phone number");
+                PhoneNo.classList.add("error");
+                Phone.innerText = "Digits should be 10";
+                PhoneNo.focus();
+                return false;
+            }
+
+            if(email.value.trim()=== "")
+            {
+                alert("Please enter a valid email address");
+                email.classList.add("error");
+                emailID.innerText = "Write email id here";
+                email.focus();
+                return false;
+            }
+
+            if(!email.value.trim().includes("@"))
+            {
+                alert("Please enter a valid email address");
+                email.checkList.add("error");
+                emailID.innerText = "Write email id in correct format";
+                email.focus();
+                return false;
+            } 
+            
+            if(passengers.value.trim() === "")
+            {
+                alert("Please enter the number of passengers");
+                passengers.classList.add("error");
+                passen.innerText = "Write the passengers here";
+                passengers.focus();
+                return false;
+            }
+            
+            if(isNaN(passengers.value.trim()))
+            {
+                alert("Passengers should be a number only")
+                passenegrs.classList.add("error");
+                passen.innerText = "It should contain digits only";
+                passengers.focus();
+                return false;
+            }
+            
+            if(vehicle.value.trim() === "")
+            {
+                alert("Please select the vehicle type");
+                vehicle.classList.add("error");
+                vehicles.innerText = "Select vehicles from here";
+                vehicle.focus();
+                return false;
+            }
+
+            if(dropbox.value.trim() === "")
+            {
+                alert("Please select the pickup date/time");
+                dropbox.classList.add("error");
+                pickup.innerText = "Select pickup date/time here";
+                dropbox.focus();
+                return false
+            }
+
+            for(let i=0; i<radios.length; i++)
+            {
+                if(radios[i].checked)
+                {
+                    selected = true;
+                    break;
+
+                }
+            }
+
+            if(!selected)
+            {
+                alert("Please select the Return Trip");
+                return false;
+            }
+
+            if(payment.value.trim() === "")
+            {
+                alert("Please select a valid payment method");
+                payment.classList.add("error");
+                pay.innerText = "Select payment method from here";
+                payment.focus();
+                return false;
+            }
+              name.classList.add("success");
+              name.classList.remove("error");
+              alert("Form submitted successfully");
+              return true;
+        }
+     </script>
+</body>
+
+
+</html>
